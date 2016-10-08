@@ -11,8 +11,7 @@ import matplotlib.pyplot as plt
 response = requests.get('http://www.nbcolympics.com/medals')
 soup = BeautifulSoup(response.content, 'lxml')
 for td in soup.find_all('tr'):
-  for r in td.find_all('div'):
-    print(r)
+  print(td)
 
 
 
