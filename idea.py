@@ -10,9 +10,39 @@ import matplotlib.pyplot as plt
 
 response = requests.get('http://www.nbcolympics.com/medals')
 soup = BeautifulSoup(response.content, 'lxml')
-for td in soup.find_all('tr'):
+for td in soup.findAll("td",{"class": "country"}):
+#for td in soup.findAll("img", {"width": "40"}):
   print(td)
 
+
+
+
+#### Getting only gold medals 
+
+# response = requests.get('http://www.nbcolympics.com/medals')
+# soup = BeautifulSoup(response.content, 'lxml')
+# for td in soup.findAll("li", {"class": "gold"}):
+#   print(td.get_text())
+
+
+#### Examples:
+
+
+#Finding something by class tag
+# nameList = bsObj.findAll("span", {"class": "green"})
+# for name in nameList:
+#   print(name.get_text())
+
+#Finding by descendants:
+# html = urlopen("http://www.pythonscraping.com/pages/page3.html")
+# bsObj = BeautifulSoup(html, "lxml")
+#practice 
+# test = bsObj.find("table", {"id": "giftList"})
+# for item in test.find("tr", {"class": "gift"}):
+#   print(item.get_text())
+#The .tr.next_siblings skips the heading
+# for sibling in bsObj.find("table", {"id": "giftList"}).tr.next_siblings:
+#   print(sibling)
 
 
 
