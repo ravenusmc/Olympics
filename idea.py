@@ -10,21 +10,30 @@ import matplotlib.pyplot as plt
 
 response = requests.get('http://www.nbcolympics.com/medals')
 soup = BeautifulSoup(response.content, 'lxml')
-#for td in soup.findAll("img", {"width": "40"}):
-#for row in soup.find_all('tr'):
-  # print(td)
-
+#This gets me the states 
 states = []
-count = 1
+# table = soup.find('table', {'class':'grid-table'})
+# table_body = table.find('tbody')
+# rows = table_body.find_all('tr')
+# for row in rows:
+#   cols = row.find_all('a')
+#   state = [ele.text.strip() for ele in cols]
+#   states.append(state)
+# print(states)
+# #for gold medals:
+# for td in soup.findAll("li", {"class": "gold"}):
+#   print(td.get_text())
 
-while count <= 88:
-  for element in soup.findAll("img", {"width": "40"}):
-    state = element.get('alt', '')
-    states.append(state)
-    print(element.get('alt', ''))
-  count += 1
 
-print(len(states))
+
+
+### Getting only td with class "country"
+table = soup.find('table', {'class':'grid-table'})
+table_body = table.find('tbody')
+rows = table_body.find_all('td')
+print(rows[14].get_text())
+Gold medals increase by 6 => 2..8..14..
+
 
 
 
