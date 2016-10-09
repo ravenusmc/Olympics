@@ -10,9 +10,29 @@ import matplotlib.pyplot as plt
 
 response = requests.get('http://www.nbcolympics.com/medals')
 soup = BeautifulSoup(response.content, 'lxml')
-for td in soup.findAll("td",{"class": "country"}):
 #for td in soup.findAll("img", {"width": "40"}):
-  print(td)
+#for row in soup.find_all('tr'):
+  # print(td)
+
+states = []
+count = 1
+
+while count <= 88:
+  for element in soup.findAll("img", {"width": "40"}):
+    state = element.get('alt', '')
+    states.append(state)
+    print(element.get('alt', ''))
+  count += 1
+
+print(len(states))
+
+
+
+# <td class="country">
+#   <div>
+#     <img alt="Niger" height="27" src="http://assets.rio2016.nbcolympics.com/country-flags/52x35/NIG.png" width="40"/>
+#     Niger                                          
+#   </div>
 
 
 
