@@ -19,10 +19,11 @@ def main():
     input("Press Enter to Continue ")
     coll = database_setup()
     state_stats = scrape_data()
-    main_menu()
+    main_menu(coll, state_stats)
 
 #This function builds the menu which will allow the user to see what they want to do. 
-def main_menu():
+def main_menu(coll, state_stats):
+    print("\033c")
     print("1. Look at Graph of Olympic medals")
     print("2. Query Database of Olympic medals")
     choice = int(input("What is your choice: "))
@@ -30,7 +31,7 @@ def main_menu():
         print("That selection is incorrect")
         choice = int(input("What is your choice: "))
     if choice == 1:
-        scrape_data(coll)
+        graph(state_stats)
     elif choice == 2:
         query_database()
 
@@ -80,11 +81,26 @@ def scrape_data():
       bronze_count += 6
       total_count += 6
       #I finally put the information into a dictionary
-      stats = {'State': state, 'Gold Medals': gold_medals, 'Silver Medals': silver_medals, 'Bronze Medals': bronze_medals, 'Total': total_medals}
+      stats = {'State': state, 'Gold_Medals': gold_medals, 'Silver_Medals': silver_medals, 'Bronze_Medals': bronze_medals, 'Total': total_medals}
       state_stats.append(stats)
-      return state_stats
+    create_csv(state_stats)
+    return state_stats
 
+def create_csv(state_stats):
+    f = open('medals.csv', 'w')
+    #This line gets the data columns from the keys of the dictionary.
+    cols = state_stats[0].keys()
+    #The with statement guarantees that the file is closed upon going through the dictionary. 
+    with open('medals.csv', 'w') as f:
+        #joins the columns with a , 
+        f.write(','.join(cols) + '\n')
+        #Creates a list using the column keys to the objects in the dictionary. 
+        for o in state_stats:
+            row = [str(o[col]) for col in cols]
+            f.write(','.join(row)+ '\n')
 
-
+def graph(state_stats):
+    print("\033c")
+    print(state_stats)
 
 main()

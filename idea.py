@@ -35,7 +35,7 @@ for row in rows:
   silver_count += 6
   bronze_count += 6
   total_count += 6
-  stats = {'State': state, 'Gold Medals': gold_medals, 'Silver Medals': silver_medals, 'Bronze Medals': bronze_medals, 'Total': total_medals}
+  stats = {'State': state, 'Gold_Medals': gold_medals, 'Silver_Medals': silver_medals, 'Bronze_Medals': bronze_medals, 'Total': total_medals}
   state_stats.append(stats)
 #print(total[11].get_text())
 
