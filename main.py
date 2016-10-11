@@ -18,7 +18,7 @@ def main():
     print("   ----------------------    ")
     input("Press Enter to Continue ")
     coll = database_setup()
-    scrape_data(coll)
+    state_stats = scrape_data()
     main_menu()
 
 #This function builds the menu which will allow the user to see what they want to do. 
@@ -30,7 +30,7 @@ def main_menu():
         print("That selection is incorrect")
         choice = int(input("What is your choice: "))
     if choice == 1:
-        graph()
+        scrape_data(coll)
     elif choice == 2:
         query_database()
 
@@ -41,9 +41,48 @@ def database_setup():
     coll = db.medals #Creating a winners collection within the practice DB
     return coll
 
-#This function will scrape the data from the website. 
-def scrape_data(coll):
+#This function scrapes the data off of the page. I have to say that this function was very annoying to write.
+#I spent probably time over the course of 4-5 days working on it. I still think the code is very 
+#ugly and could be done so much better!   
+def scrape_data():
     response = requests.get('http://www.nbcolympics.com/medals')
+    soup = BeautifulSoup(response.content, 'lxml')
+    #This gets me the states 
+    state_stats = []
+    #I pull the entire table from the site that I want to look at.
+    table = soup.find('table', {'class':'grid-table'})
+    #I then create an object which will hold the table body.
+    table_body = table.find('tbody')
+    #Here, I look at all the rows.
+    rows = table_body.find_all('tr')
+    #setting up counts-I had to cheat and just almost 'hard code the values in'
+    gold_count = 2
+    silver_count = 3
+    bronze_count = 4
+    total_count = 5
+    #I then start looping throw all of the rows pulling out the state name and medal counts. 
+    for row in rows:
+      cols = row.find_all('a')
+      state = [ele.text.strip() for ele in cols]
+      # states.append(state)
+      gold = table_body.find_all('td')
+      silver = table_body.find_all('td')
+      bronze = table_body.find_all('td')
+      total = table_body.find_all('td')
+      gold_medals = gold[gold_count].get_text()
+      silver_medals = silver[silver_count].get_text()
+      bronze_medals = bronze[bronze_count].get_text()
+      total_medals = bronze[total_count].get_text()
+      #I increase the count by six because that is how often the tables change. I really hate this part
+      #and I truly believe it could have been done better. 
+      gold_count += 6
+      silver_count += 6
+      bronze_count += 6
+      total_count += 6
+      #I finally put the information into a dictionary
+      stats = {'State': state, 'Gold Medals': gold_medals, 'Silver Medals': silver_medals, 'Bronze Medals': bronze_medals, 'Total': total_medals}
+      state_stats.append(stats)
+      return state_stats
 
 
 

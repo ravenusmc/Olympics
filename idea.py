@@ -11,28 +11,48 @@ import matplotlib.pyplot as plt
 response = requests.get('http://www.nbcolympics.com/medals')
 soup = BeautifulSoup(response.content, 'lxml')
 #This gets me the states 
-states = []
-# table = soup.find('table', {'class':'grid-table'})
-# table_body = table.find('tbody')
-# rows = table_body.find_all('tr')
-# for row in rows:
-#   cols = row.find_all('a')
-#   state = [ele.text.strip() for ele in cols]
-#   states.append(state)
-# print(states)
-# #for gold medals:
-# for td in soup.findAll("li", {"class": "gold"}):
-#   print(td.get_text())
+state_stats = []
+table = soup.find('table', {'class':'grid-table'})
+table_body = table.find('tbody')
+rows = table_body.find_all('tr')
+gold_count = 2
+silver_count = 3
+bronze_count = 4
+total_count = 5
+for row in rows:
+  cols = row.find_all('a')
+  state = [ele.text.strip() for ele in cols]
+  # states.append(state)
+  gold = table_body.find_all('td')
+  silver = table_body.find_all('td')
+  bronze = table_body.find_all('td')
+  total = table_body.find_all('td')
+  gold_medals = gold[gold_count].get_text()
+  silver_medals = silver[silver_count].get_text()
+  bronze_medals = bronze[bronze_count].get_text()
+  total_medals = bronze[total_count].get_text()
+  gold_count += 6
+  silver_count += 6
+  bronze_count += 6
+  total_count += 6
+  stats = {'State': state, 'Gold Medals': gold_medals, 'Silver Medals': silver_medals, 'Bronze Medals': bronze_medals, 'Total': total_medals}
+  state_stats.append(stats)
+#print(total[11].get_text())
 
+print(state_stats)
+
+
+# orders = {'President': name, 'Orders': order}
+# executive_orders.append(orders)
 
 
 
 ### Getting only td with class "country"
-table = soup.find('table', {'class':'grid-table'})
-table_body = table.find('tbody')
-rows = table_body.find_all('td')
-print(rows[14].get_text())
-Gold medals increase by 6 => 2..8..14..
+# table = soup.find('table', {'class':'grid-table'})
+# table_body = table.find('tbody')
+# rows = table_body.find_all('td')
+# print(rows[1].get_text())
+#Gold medals increase by 6 => 2..8..14..
 
 
 
