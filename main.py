@@ -101,6 +101,6 @@ def create_csv(state_stats):
 
 def graph(state_stats):
     print("\033c")
-    print(state_stats)
+
 
 main()
