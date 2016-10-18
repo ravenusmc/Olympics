@@ -1,89 +1,89 @@
-Total,Bronze_Medals,State,Gold_Medals,Silver_Medals
-121,38,['United States'],46,37
-70,26,['China'],26,18
-67,17,['Great Britain'],27,23
-56,19,['Russia'],19,18
-42,15,['Germany'],17,10
-42,14,['France'],10,18
-41,21,['Japan'],12,8
-29,10,['Australia'],8,11
-28,8,['Italy'],8,12
-22,15,['Canada'],4,3
-21,9,['South Korea'],9,3
-19,4,['Netherlands'],8,7
-19,6,['Brazil'],7,6
-18,5,['New Zealand'],4,9
-18,10,['Azerbaijan'],1,7
-17,6,['Spain'],7,4
-17,9,['Kazakhstan'],3,5
-15,4,['Hungary'],8,3
-15,7,['Denmark'],2,6
-13,1,['Kenya'],6,6
-13,7,['Uzbekistan'],4,2
-11,2,['Jamaica'],6,3
-11,4,['Cuba'],5,2
-11,3,['Sweden'],2,6
-11,4,['Ukraine'],2,5
-11,6,['Poland'],2,3
-10,2,['Croatia'],5,3
-10,2,['South Africa'],2,6
-10,7,['Czech Republic'],1,2
-9,4,['Belarus'],1,4
-8,3,['Colombia'],3,2
-8,4,['Iran'],3,1
-8,2,['Serbia'],2,4
-8,4,['Turkey'],1,3
-8,5,['Ethiopia'],1,2
-7,2,['Switzerland'],3,2
-7,2,['North Korea'],2,3
-7,4,['Georgia'],2,1
-6,2,['Greece'],3,1
-6,2,['Belgium'],2,2
-6,2,['Thailand'],2,2
-5,3,['Romania'],1,1
-5,1,['Malaysia'],0,4
-5,2,['Mexico'],0,3
-4,0,['Argentina'],3,1
-4,0,['Slovakia'],2,2
-4,0,['Armenia'],1,3
-4,1,['Slovenia'],1,2
-4,3,['Lithuania'],0,1
-4,4,['Norway'],0,0
-3,0,['Indonesia'],1,2
-3,2,['Chinese Taipei'],1,0
-3,2,['Bulgaria'],0,1
-3,2,['Venezuela'],0,1
-3,3,['Egypt'],0,0
-3,3,['Tunisia'],0,0
-2,0,['Bahrain'],1,1
-2,0,['Vietnam'],1,1
-2,1,['Bahamas'],1,0
-2,1,["Côte d'Ivoire"],1,0
-2,1,['Independent Olympic Athletes'],1,0
-2,0,['Algeria'],0,2
-2,0,['Ireland'],0,2
-2,1,['India'],0,1
-2,1,['Mongolia'],0,1
-2,2,['Israel'],0,0
-1,0,['Fiji'],1,0
-1,0,['Jordan'],1,0
-1,0,['Kosovo'],1,0
-1,0,['Puerto Rico'],1,0
-1,0,['Singapore'],1,0
-1,0,['Tajikistan'],1,0
-1,0,['Burundi'],0,1
-1,0,['Grenada'],0,1
-1,0,['Niger'],0,1
-1,0,['Philippines'],0,1
-1,0,['Qatar'],0,1
-1,1,['Austria'],0,0
-1,1,['Dominican Republic'],0,0
-1,1,['Estonia'],0,0
-1,1,['Finland'],0,0
-1,1,['Kyrgyzstan'],0,0
-1,1,['Morocco'],0,0
-1,1,['Moldova'],0,0
-1,1,['Nigeria'],0,0
-1,1,['Portugal'],0,0
-1,1,['Trinidad & Tobago'],0,0
-1,1,['UAE'],0,0
+Gold_Medals,State,Total,Bronze_Medals,Silver_Medals
+46,['United States'],121,38,37
+26,['China'],70,26,18
+27,['Great Britain'],67,17,23
+19,['Russia'],56,19,18
+17,['Germany'],42,15,10
+10,['France'],42,14,18
+12,['Japan'],41,21,8
+8,['Australia'],29,10,11
+8,['Italy'],28,8,12
+4,['Canada'],22,15,3
+9,['South Korea'],21,9,3
+8,['Netherlands'],19,4,7
+7,['Brazil'],19,6,6
+4,['New Zealand'],18,5,9
+1,['Azerbaijan'],18,10,7
+7,['Spain'],17,6,4
+3,['Kazakhstan'],17,9,5
+8,['Hungary'],15,4,3
+2,['Denmark'],15,7,6
+6,['Kenya'],13,1,6
+4,['Uzbekistan'],13,7,2
+6,['Jamaica'],11,2,3
+5,['Cuba'],11,4,2
+2,['Sweden'],11,3,6
+2,['Ukraine'],11,4,5
+2,['Poland'],11,6,3
+5,['Croatia'],10,2,3
+2,['South Africa'],10,2,6
+1,['Czech Republic'],10,7,2
+1,['Belarus'],9,4,4
+3,['Colombia'],8,3,2
+3,['Iran'],8,4,1
+2,['Serbia'],8,2,4
+1,['Turkey'],8,4,3
+1,['Ethiopia'],8,5,2
+3,['Switzerland'],7,2,2
+2,['North Korea'],7,2,3
+2,['Georgia'],7,4,1
+3,['Greece'],6,2,1
+2,['Belgium'],6,2,2
+2,['Thailand'],6,2,2
+1,['Romania'],5,3,1
+0,['Malaysia'],5,1,4
+0,['Mexico'],5,2,3
+3,['Argentina'],4,0,1
+2,['Slovakia'],4,0,2
+1,['Armenia'],4,0,3
+1,['Slovenia'],4,1,2
+0,['Lithuania'],4,3,1
+0,['Norway'],4,4,0
+1,['Indonesia'],3,0,2
+1,['Chinese Taipei'],3,2,0
+0,['Bulgaria'],3,2,1
+0,['Venezuela'],3,2,1
+0,['Egypt'],3,3,0
+0,['Tunisia'],3,3,0
+1,['Bahrain'],2,0,1
+1,['Vietnam'],2,0,1
+1,['Bahamas'],2,1,0
+1,["Côte d'Ivoire"],2,1,0
+1,['Independent Olympic Athletes'],2,1,0
+0,['Algeria'],2,0,2
+0,['Ireland'],2,0,2
+0,['India'],2,1,1
+0,['Mongolia'],2,1,1
+0,['Israel'],2,2,0
+1,['Fiji'],1,0,0
+1,['Jordan'],1,0,0
+1,['Kosovo'],1,0,0
+1,['Puerto Rico'],1,0,0
+1,['Singapore'],1,0,0
+1,['Tajikistan'],1,0,0
+0,['Burundi'],1,0,1
+0,['Grenada'],1,0,1
+0,['Niger'],1,0,1
+0,['Philippines'],1,0,1
+0,['Qatar'],1,0,1
+0,['Austria'],1,1,0
+0,['Dominican Republic'],1,1,0
+0,['Estonia'],1,1,0
+0,['Finland'],1,1,0
+0,['Kyrgyzstan'],1,1,0
+0,['Morocco'],1,1,0
+0,['Moldova'],1,1,0
+0,['Nigeria'],1,1,0
+0,['Portugal'],1,1,0
+0,['Trinidad & Tobago'],1,1,0
+0,['UAE'],1,1,0

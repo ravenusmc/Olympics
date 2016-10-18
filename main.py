@@ -18,7 +18,8 @@ def main():
     print("   ----------------------    ")
     input("Press Enter to Continue ")
     coll = database_setup()
-    state_stats = scrape_data()
+    state_stats = scrape_data(coll)
+    coll.insert(state_stats) #Inserting the state_stats dictionary into the collection.
     main_menu(coll, state_stats)
 
 #This function builds the menu which will allow the user to see what they want to do. 
@@ -33,7 +34,7 @@ def main_menu(coll, state_stats):
     if choice == 1:
         graph(state_stats)
     elif choice == 2:
-        query_database()
+        query_database(coll)
 
 #This function sets up the database which will be used in this project. 
 def database_setup():
@@ -45,7 +46,7 @@ def database_setup():
 #This function scrapes the data off of the page. I have to say that this function was very annoying to write.
 #I spent probably time over the course of 4-5 days working on it. I still think the code is very 
 #ugly and could be done so much better!   
-def scrape_data():
+def scrape_data(coll):
     response = requests.get('http://www.nbcolympics.com/medals')
     soup = BeautifulSoup(response.content, 'lxml')
     #This gets me the states 
@@ -86,6 +87,7 @@ def scrape_data():
     create_csv(state_stats)
     return state_stats
 
+#This function will create the CSV file from the stat_stats dictionary
 def create_csv(state_stats):
     f = open('medals.csv', 'w')
     #This line gets the data columns from the keys of the dictionary.
@@ -99,6 +101,7 @@ def create_csv(state_stats):
             row = [str(o[col]) for col in cols]
             f.write(','.join(row)+ '\n')
 
+#This file will create the bar graphs of all the medals by state.  
 def graph(state_stats):
     print("\033c")
     print("1. Total Medals by top 10 states")
@@ -132,6 +135,19 @@ def graph(state_stats):
     plt.show(medal_count.plot(kind='bar', title = field, figsize=(12,8)))
     dataMenu_OrQuit()
 
+#This function is where the user will be able to query the database. 
+def query_database(coll):
+  print("\033c")
+  number = int(input("What value do you want to look above: "))
+  group = "Gold_Medals"
+  # medals = coll.find({'Total': {'$gt': number}} )
+  # for medal in medals:
+  #   print(medal)
+  cursor = coll.find()
+  for document in cursor:
+    print(document)
+  dataMenu_OrQuit()
+
 
 ### Non Critical Functions ###
 def dataMenu_OrQuit():
@@ -146,5 +162,5 @@ def dataMenu_OrQuit():
   elif choice == 2:
     print("Thank you for using the program!")
 
-
+#This will call the main function and launch the entire program. 
 main()
