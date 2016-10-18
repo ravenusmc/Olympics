@@ -1,89 +1,89 @@
-Gold_Medals,Total,Bronze_Medals,State,Silver_Medals
-46,121,38,['United States'],37
-26,70,26,['China'],18
-27,67,17,['Great Britain'],23
-19,56,19,['Russia'],18
-17,42,15,['Germany'],10
-10,42,14,['France'],18
-12,41,21,['Japan'],8
-8,29,10,['Australia'],11
-8,28,8,['Italy'],12
-4,22,15,['Canada'],3
-9,21,9,['South Korea'],3
-8,19,4,['Netherlands'],7
-7,19,6,['Brazil'],6
-4,18,5,['New Zealand'],9
-1,18,10,['Azerbaijan'],7
-7,17,6,['Spain'],4
-3,17,9,['Kazakhstan'],5
-8,15,4,['Hungary'],3
-2,15,7,['Denmark'],6
-6,13,1,['Kenya'],6
-4,13,7,['Uzbekistan'],2
-6,11,2,['Jamaica'],3
-5,11,4,['Cuba'],2
-2,11,3,['Sweden'],6
-2,11,4,['Ukraine'],5
-2,11,6,['Poland'],3
-5,10,2,['Croatia'],3
-2,10,2,['South Africa'],6
-1,10,7,['Czech Republic'],2
-1,9,4,['Belarus'],4
-3,8,3,['Colombia'],2
-3,8,4,['Iran'],1
-2,8,2,['Serbia'],4
-1,8,4,['Turkey'],3
-1,8,5,['Ethiopia'],2
-3,7,2,['Switzerland'],2
-2,7,2,['North Korea'],3
-2,7,4,['Georgia'],1
-3,6,2,['Greece'],1
-2,6,2,['Belgium'],2
-2,6,2,['Thailand'],2
-1,5,3,['Romania'],1
-0,5,1,['Malaysia'],4
-0,5,2,['Mexico'],3
-3,4,0,['Argentina'],1
-2,4,0,['Slovakia'],2
-1,4,0,['Armenia'],3
-1,4,1,['Slovenia'],2
-0,4,3,['Lithuania'],1
-0,4,4,['Norway'],0
-1,3,0,['Indonesia'],2
-1,3,2,['Chinese Taipei'],0
-0,3,2,['Bulgaria'],1
-0,3,2,['Venezuela'],1
-0,3,3,['Egypt'],0
-0,3,3,['Tunisia'],0
-1,2,0,['Bahrain'],1
-1,2,0,['Vietnam'],1
-1,2,1,['Bahamas'],0
-1,2,1,["Côte d'Ivoire"],0
-1,2,1,['Independent Olympic Athletes'],0
-0,2,0,['Algeria'],2
-0,2,0,['Ireland'],2
-0,2,1,['India'],1
-0,2,1,['Mongolia'],1
-0,2,2,['Israel'],0
-1,1,0,['Fiji'],0
-1,1,0,['Jordan'],0
-1,1,0,['Kosovo'],0
-1,1,0,['Puerto Rico'],0
-1,1,0,['Singapore'],0
-1,1,0,['Tajikistan'],0
-0,1,0,['Burundi'],1
-0,1,0,['Grenada'],1
-0,1,0,['Niger'],1
-0,1,0,['Philippines'],1
-0,1,0,['Qatar'],1
-0,1,1,['Austria'],0
-0,1,1,['Dominican Republic'],0
-0,1,1,['Estonia'],0
-0,1,1,['Finland'],0
-0,1,1,['Kyrgyzstan'],0
-0,1,1,['Morocco'],0
-0,1,1,['Moldova'],0
-0,1,1,['Nigeria'],0
-0,1,1,['Portugal'],0
-0,1,1,['Trinidad & Tobago'],0
-0,1,1,['UAE'],0
+Total,Bronze_Medals,State,Gold_Medals,Silver_Medals
+121,38,['United States'],46,37
+70,26,['China'],26,18
+67,17,['Great Britain'],27,23
+56,19,['Russia'],19,18
+42,15,['Germany'],17,10
+42,14,['France'],10,18
+41,21,['Japan'],12,8
+29,10,['Australia'],8,11
+28,8,['Italy'],8,12
+22,15,['Canada'],4,3
+21,9,['South Korea'],9,3
+19,4,['Netherlands'],8,7
+19,6,['Brazil'],7,6
+18,5,['New Zealand'],4,9
+18,10,['Azerbaijan'],1,7
+17,6,['Spain'],7,4
+17,9,['Kazakhstan'],3,5
+15,4,['Hungary'],8,3
+15,7,['Denmark'],2,6
+13,1,['Kenya'],6,6
+13,7,['Uzbekistan'],4,2
+11,2,['Jamaica'],6,3
+11,4,['Cuba'],5,2
+11,3,['Sweden'],2,6
+11,4,['Ukraine'],2,5
+11,6,['Poland'],2,3
+10,2,['Croatia'],5,3
+10,2,['South Africa'],2,6
+10,7,['Czech Republic'],1,2
+9,4,['Belarus'],1,4
+8,3,['Colombia'],3,2
+8,4,['Iran'],3,1
+8,2,['Serbia'],2,4
+8,4,['Turkey'],1,3
+8,5,['Ethiopia'],1,2
+7,2,['Switzerland'],3,2
+7,2,['North Korea'],2,3
+7,4,['Georgia'],2,1
+6,2,['Greece'],3,1
+6,2,['Belgium'],2,2
+6,2,['Thailand'],2,2
+5,3,['Romania'],1,1
+5,1,['Malaysia'],0,4
+5,2,['Mexico'],0,3
+4,0,['Argentina'],3,1
+4,0,['Slovakia'],2,2
+4,0,['Armenia'],1,3
+4,1,['Slovenia'],1,2
+4,3,['Lithuania'],0,1
+4,4,['Norway'],0,0
+3,0,['Indonesia'],1,2
+3,2,['Chinese Taipei'],1,0
+3,2,['Bulgaria'],0,1
+3,2,['Venezuela'],0,1
+3,3,['Egypt'],0,0
+3,3,['Tunisia'],0,0
+2,0,['Bahrain'],1,1
+2,0,['Vietnam'],1,1
+2,1,['Bahamas'],1,0
+2,1,["Côte d'Ivoire"],1,0
+2,1,['Independent Olympic Athletes'],1,0
+2,0,['Algeria'],0,2
+2,0,['Ireland'],0,2
+2,1,['India'],0,1
+2,1,['Mongolia'],0,1
+2,2,['Israel'],0,0
+1,0,['Fiji'],1,0
+1,0,['Jordan'],1,0
+1,0,['Kosovo'],1,0
+1,0,['Puerto Rico'],1,0
+1,0,['Singapore'],1,0
+1,0,['Tajikistan'],1,0
+1,0,['Burundi'],0,1
+1,0,['Grenada'],0,1
+1,0,['Niger'],0,1
+1,0,['Philippines'],0,1
+1,0,['Qatar'],0,1
+1,1,['Austria'],0,0
+1,1,['Dominican Republic'],0,0
+1,1,['Estonia'],0,0
+1,1,['Finland'],0,0
+1,1,['Kyrgyzstan'],0,0
+1,1,['Morocco'],0,0
+1,1,['Moldova'],0,0
+1,1,['Nigeria'],0,0
+1,1,['Portugal'],0,0
+1,1,['Trinidad & Tobago'],0,0
+1,1,['UAE'],0,0

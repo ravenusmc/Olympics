@@ -101,6 +101,50 @@ def create_csv(state_stats):
 
 def graph(state_stats):
     print("\033c")
+    print("1. Total Medals by top 10 states")
+    print("2. Gold Medals by top 10 states")
+    print("3. Silver Medals by top 10 states")
+    print("4. Bronze Medals by top 10 states")
+    choice = int(input("What is your choice? "))
+    while not graphValid(choice):
+      print("You can only select 1, 2 or 3!")
+      choice = int(input("What is your choice? "))
+    if choice == 1:
+      field = 'Total'
+    elif choice == 2:
+      field = 'Gold_Medals'
+    elif choice == 3:
+      field = 'Silver_Medals'
+    elif choice == 4:
+      field = 'Bronze_Medals'
+    medals = pd.read_csv('medals.csv', usecols=['State', field], index_col=['State'])
+    medal_count = medals[[field]]
+    print("Once the graph appears, you must close it to move on")
+    input("Press enter to make the graph appear! ")
+    if field == 'Total':
+      medal_count = medal_count[medal_count.Total >= 10]
+    elif field == "Gold_Medals":
+      medal_count = medal_count[medal_count.Gold_Medals >= 10]
+    elif field == "Silver_Medals":
+      medal_count = medal_count[medal_count.Silver_Medals >= 10]
+    elif field == "Bronze_Medals":
+      medal_count = medal_count[medal_count.Bronze_Medals >= 10]
+    plt.show(medal_count.plot(kind='bar', title = field, figsize=(12,8)))
+    dataMenu_OrQuit()
+
+
+### Non Critical Functions ###
+def dataMenu_OrQuit():
+  print("1. Main Menu")
+  print("2. Quit")
+  choice = int(input("What is your choice? "))
+  while not main_menu_valid(choice):
+    print("That is not a valid choice!")
+    choice = int(input("What is your choice? "))
+  if choice == 1:
+    main()
+  elif choice == 2:
+    print("Thank you for using the program!")
 
 
 main()
