@@ -9,10 +9,11 @@ import matplotlib.pyplot as plt
 
 #print(df.dtypes)
 
-medals = pd.read_csv('medals.csv', usecols=['State', 'Gold_Medals'], index_col=['State'])
-medal_count = medals[['Gold_Medals']]
-medal_count = medal_count[medal_count.Gold_Medals >= 10]
-plt.show(medal_count.plot(kind='bar', title = 'Gold Medals', figsize=(12,8)))
+medals = pd.read_csv('medals.csv')
+print(medals.dtypes)
+# medal_count = medals[['Gold_Medals']]
+# medal_count = medal_count[medal_count.Gold_Medals >= 10]
+# plt.show(medal_count.plot(kind='bar', title = 'Gold Medals', figsize=(12,8)))
 
 
 

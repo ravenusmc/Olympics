@@ -150,9 +150,9 @@ def query_database(coll):
   if choice == 1:
     Medals_by_State(coll)
   elif choice == 2:
-    pass
+    gold_medals(coll)
   elif choice == 3:
-    pass
+    silver_medals(coll)
   elif choice == 4:
     pass
   elif choice == 5:
@@ -167,6 +167,31 @@ def Medals_by_State(coll):
     print(state)
   print()
   dataMenu_OrQuit()
+
+#This function allows the user to query for gold medals medals 
+def gold_medals(coll):
+  print("\033c")
+  print("Here you will look at which states have gold medals above or below a certain value.")
+  print("1. Above a certain value")
+  print("2. Below a certain value")
+  choice = int(input("What is your choice? "))
+  while not main_menu_valid(choice):
+    print("That is not a valid selection")
+    choice = int(input("What is your choice?"))
+  if choice == 1:
+    number = input("What value do you want to look above: ")
+    medals = coll.find({'Gold_Medals': {'$gt': number}})
+    for medal in medals:
+      print(medal)
+  elif choice == 2:
+    number = input("What value do you want to look below: ")
+    medals = coll.find({'Gold_Medals': {"$lt": number}})
+    for medal in medals:
+      print(medal)
+  dataMenu_OrQuit()
+
+USE ONE FUNCTION WITH ALL THE MEDALS!!!
+
 
 
   #number = input("What value do you want to look above: ")
