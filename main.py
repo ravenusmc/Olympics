@@ -138,15 +138,45 @@ def graph(state_stats):
 #This function is where the user will be able to query the database. 
 def query_database(coll):
   print("\033c")
-  number = int(input("What value do you want to look above: "))
-  group = "Gold_Medals"
-  # medals = coll.find({'Total': {'$gt': number}} )
-  # for medal in medals:
-  #   print(medal)
-  cursor = coll.find()
-  for document in cursor:
-    print(document)
+  print("1. Medals by State")
+  print("2. Gold Medals")
+  print("3. Silver Medals")
+  print("4. Bronze Medals")
+  print("5. Total Medals")
+  choice = int(input("What is your choice?"))
+  while not queryValid(choice):
+    print("That is not a valid selection")
+    choice = int(input("What is your choice?"))
+  if choice == 1:
+    Medals_by_State(coll)
+  elif choice == 2:
+    pass
+  elif choice == 3:
+    pass
+  elif choice == 4:
+    pass
+  elif choice == 5:
+    pass
+
+#This function will allow the user to look at a spcific state and its medals. 
+def Medals_by_State(coll):
+  print("\033c")
+  state = input("What state do you want to look at for data? ")
+  states = coll.find({'State': state})
+  for state in states:
+    print(state)
+  print()
   dataMenu_OrQuit()
+
+
+  #number = input("What value do you want to look above: ")
+  # group = "Gold_Medals"
+  # for post in coll.find({'Gold_Medals': {'$gt': number}}):
+  #   print(post)
+
+  # cursor = coll.find()
+  # for document in cursor:
+  #   print(document)
 
 
 ### Non Critical Functions ###
