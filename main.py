@@ -19,8 +19,8 @@ def main():
     input("Press Enter to Continue ")
     coll = database_setup()
     state_stats = scrape_data(coll)
-    coll.insert(state_stats) #Inserting the state_stats dictionary into the collection.
-    main_menu(coll, state_stats)
+    #coll.insert(state_stats) #Inserting the state_stats dictionary into the collection.
+    #main_menu(coll, state_stats)
 
 #This function builds the menu which will allow the user to see what they want to do. 
 def main_menu(coll, state_stats):
@@ -82,8 +82,9 @@ def scrape_data(coll):
       bronze_count += 6
       total_count += 6
       #I finally put the information into a dictionary
-      stats = {'State': state, 'Gold_Medals': gold_medals, 'Silver_Medals': silver_medals, 'Bronze_Medals': bronze_medals, 'Total': total_medals}
+      stats = {'State': state, 'Gold_Medals': int(gold_medals), 'Silver_Medals': int(silver_medals), 'Bronze_Medals': int(bronze_medals), 'Total': int(total_medals)}
       state_stats.append(stats)
+    print(state_stats)
     create_csv(state_stats)
     return state_stats
 
@@ -146,17 +147,21 @@ def query_database(coll):
   choice = int(input("What is your choice?"))
   while not queryValid(choice):
     print("That is not a valid selection")
-    choice = int(input("What is your choice?"))
+    choice = int(input("What is your choice? "))
   if choice == 1:
     Medals_by_State(coll)
   elif choice == 2:
-    gold_medals(coll)
+    medal_type = 'Gold_Medals'
+    query_medals(coll, medal_type)
   elif choice == 3:
-    silver_medals(coll)
+    medal_type = 'Silver_Medals'
+    query_medals(coll, medal_type)
   elif choice == 4:
-    pass
+    medal_type = 'Bronze_Medals'
+    query_medals(coll, medal_type)
   elif choice == 5:
-    pass
+    medal_type = 'Total'
+    query_medals(coll, medal_type)
 
 #This function will allow the user to look at a spcific state and its medals. 
 def Medals_by_State(coll):
@@ -169,7 +174,7 @@ def Medals_by_State(coll):
   dataMenu_OrQuit()
 
 #This function allows the user to query for gold medals medals 
-def gold_medals(coll):
+def query_medals(coll, medal_type):
   print("\033c")
   print("Here you will look at which states have gold medals above or below a certain value.")
   print("1. Above a certain value")
@@ -180,17 +185,17 @@ def gold_medals(coll):
     choice = int(input("What is your choice?"))
   if choice == 1:
     number = input("What value do you want to look above: ")
-    medals = coll.find({'Gold_Medals': {'$gt': number}})
+    medals = coll.find({'Gold_Medals': { '$gte' : 30}})
     for medal in medals:
       print(medal)
   elif choice == 2:
     number = input("What value do you want to look below: ")
-    medals = coll.find({'Gold_Medals': {"$lt": number}})
+    medals = coll.find({medal_type: {"$lte": number}})
     for medal in medals:
       print(medal)
   dataMenu_OrQuit()
 
-USE ONE FUNCTION WITH ALL THE MEDALS!!!
+
 
 
 
