@@ -19,8 +19,8 @@ def main():
     input("Press Enter to Continue ")
     coll = database_setup()
     state_stats = scrape_data(coll)
-    #coll.insert(state_stats) #Inserting the state_stats dictionary into the collection.
-    #main_menu(coll, state_stats)
+    coll.insert(state_stats) #Inserting the state_stats dictionary into the collection.
+    main_menu(coll, state_stats)
 
 #This function builds the menu which will allow the user to see what they want to do. 
 def main_menu(coll, state_stats):
@@ -184,8 +184,8 @@ def query_medals(coll, medal_type):
     print("That is not a valid selection")
     choice = int(input("What is your choice?"))
   if choice == 1:
-    number = input("What value do you want to look above: ")
-    medals = coll.find({'Gold_Medals': { '$gte' : 30}})
+    number = int(input("What value do you want to look above: "))
+    medals = coll.find({medal_type: { '$gte' : number}})
     for medal in medals:
       print(medal)
   elif choice == 2:
@@ -194,19 +194,6 @@ def query_medals(coll, medal_type):
     for medal in medals:
       print(medal)
   dataMenu_OrQuit()
-
-
-
-
-
-  #number = input("What value do you want to look above: ")
-  # group = "Gold_Medals"
-  # for post in coll.find({'Gold_Medals': {'$gt': number}}):
-  #   print(post)
-
-  # cursor = coll.find()
-  # for document in cursor:
-  #   print(document)
 
 
 ### Non Critical Functions ###
